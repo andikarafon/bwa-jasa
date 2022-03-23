@@ -15,6 +15,14 @@ class CreateServiceTable extends Migration
     {
         Schema::create('service', function (Blueprint $table) {
             $table->id();
+            $table->integer('users_id')->nullable();
+            $table->string('title'); //tidak di set nullable artinya harus diisi
+            $table->longText('description')->nullable();
+            $table->integer('delivery_time')->nullable();
+            $table->integer('revision_limit')->nullable();
+            $table->string('price')->nullable(); //harga string jika dipastikan bukan bilangan double
+            $table->longText('note');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

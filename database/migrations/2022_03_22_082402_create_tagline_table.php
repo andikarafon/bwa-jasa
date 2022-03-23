@@ -15,6 +15,9 @@ class CreateTaglineTable extends Migration
     {
         Schema::create('tagline', function (Blueprint $table) {
             $table->id();
+            $table->integer('service_id')->nullable();
+            $table->string('tagline'); //tidak di set nullable artinya harus diisi
+            $table->softDeletes();
             $table->timestamps();
         });
     }

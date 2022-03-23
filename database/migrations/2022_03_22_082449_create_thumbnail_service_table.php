@@ -15,6 +15,9 @@ class CreateThumbnailServiceTable extends Migration
     {
         Schema::create('thumbnail_service', function (Blueprint $table) {
             $table->id();
+            $table->integer('service_id')->nullable();
+            $table->longText('thumbnail'); //tidak di set nullable artinya harus diisi\
+            $table->softDeletes();
             $table->timestamps();
         });
     }
