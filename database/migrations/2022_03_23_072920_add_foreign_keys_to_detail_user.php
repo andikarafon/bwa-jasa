@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeysDetailUser extends Migration
+class AddForeignKeysToDetailUser extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class AddForeignKeysDetailUser extends Migration
 
     /**
      * Reverse the migrations.
-     *
+     *clear
      * @return void
      */
     public function down()
