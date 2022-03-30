@@ -31,4 +31,10 @@ class AdvantageService extends Model
             'deleted_at',
             
     ];
+
+    public function service()
+    {
+        return $this->belongsTo('App\Models\Service', 'service_id', 'id');
+    }
+
 }

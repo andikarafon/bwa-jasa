@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class AdvantageUser extends Model
+class OrderStatus extends Model
 {
-    //ini di off kan saja   
+  //ini di off kan saja   
     //use HasFactory; 
 
     use SoftDeletes;
 
-    public $table = 'advantage_user'; //table 
+    public $table = 'order_status'; //table 
 
     protected $dates = [
         'updated_at',
@@ -24,17 +24,16 @@ class AdvantageUser extends Model
     
         //memberi tahu ke laravel, field mana saja yang bisa diisi oleh user 
     protected $fillable = [
-        'service_id', 
-        'advantage', 
-        'updated_at',
-        'created_at',
-        'deleted_at',
+            'name', 
+            'updated_at',
+            'created_at',
+            'deleted_at',
             
     ];
 
-    public function service()
+    public function order()
     {
-        return $this->belongsTo('App\Models\Service', 'service_id', 'id');
+            return $this->hasMany('App\Models\Order', 'order_status_id');
     }
-    
+
 }

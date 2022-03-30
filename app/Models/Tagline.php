@@ -30,4 +30,10 @@ class Tagline extends Model
         'created_at',
         'deleted_at',
     ];
+
+    public function service()
+    {
+        return $this->belongsTo('App\Models\Service', 'service_id', 'id');
+    }
+    
 }
