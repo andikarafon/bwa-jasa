@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 
 //menggunakan password
-use Illuminate\Database\Facades\Hash;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -41,6 +41,6 @@ class UsersTableSeeder extends Seeder
 
         //panggil modelnya dan diinsert
         User::insert($users);
-        
+
     }
 }
